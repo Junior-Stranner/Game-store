@@ -38,7 +38,7 @@ public class CadastrarProd {
 			case 4:recaregarCarteira();break;
 			case 5:carrinhoCompraJogo();break;
 			case 6:baixaEstoque();break;
-			//	case 6:calcularDesconto();break;
+			case 6:calcularDesconto();break;
 			case 9:System.out.println(" Finalizar Sistema !!");
 			default:System.out.println("Opção Inválida!!");
 
