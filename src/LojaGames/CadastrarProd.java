@@ -9,45 +9,6 @@ public class CadastrarProd {
 	static ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 	static ArrayList<Games> games = new ArrayList<Games>();
 
-	public static void main(String[] args) {
-
-
-		// Games game =new Games();
-
-		int op = 0;
-
-		do {
-
-			System.out.println("\n=======\n MENU \n=======\n"
-					+ " \n 0 - cadastrar Cliente "
-					+ " \n 1 - VisualizarUsuario"
-					+ " \n 2 - Cadastrar Produto/s"
-					+ " \n 3 - dados do Produto"
-					+ " \n 4 - Recaregar Valor na Carteira"
-					+ " \n 5 - Jogo no Carrinho/compra "
-					//	+ " \n 6 - resgatar Desconto"
-					+ " \n 6 - baixa no Estoque pos compra"
-					+ " \n 9 - Finalizar Sistema ");
-			op = Integer.parseInt(in.nextLine());
-			switch (op) {
-
-			case 0:cadastrarUsuario();break;
-			case 1:VisualizarUsuario();break;
-			case 2:cadastrarProd();break;
-			case 3:dadosProduto();break;
-			case 4:recaregarCarteira();break;
-			case 5:carrinhoCompraJogo();break;
-			case 6:baixaEstoque();break;
-			case 6:calcularDesconto();break;
-			case 9:System.out.println(" Finalizar Sistema !!");
-			default:System.out.println("Opção Inválida!!");
-
-			}
-
-		} while (op != 9);
-
-	}
-
 	public static void baixaEstoque() {
 
 		for (Usuario usuario1 : usuarios) {
@@ -68,6 +29,8 @@ public class CadastrarProd {
 		System.out.println("Jogo a adicionar");
 		String nomeJogo = in.nextLine();
 
+		
+
 		System.out.println("\n =============== \n Carrinho de Compras \n ================ \n");
 
 		for (Games games1 : games) {
@@ -78,6 +41,7 @@ public class CadastrarProd {
 				+ " \n Data de Lancamento : " + games1.getLancamento()
 				+ " \n Preco : " + games1.getPreco()
 				+ " \n Estoque : " + games1.getEstoque());
+				games1.setEstoque(games1.getEstoque()-1);
 
 			} else {
 				System.out.println("Não tem jogo no carrinho");
@@ -128,7 +92,6 @@ public class CadastrarProd {
 
 				System.out.println("\n nome do Jogo : " + games1.getNomeJogo()
 				+ " \n Preco Totat (Sem o Desconto): " + games1.getPreco());
-				games1.setEstoque(games1.getEstoque()-1);
 
 
 				if (games1.getPreco() > 200 && games1.getPreco() < 500) {
@@ -217,7 +180,7 @@ public static void dadosProduto() {
 
 }
 
-private static void VisualizarUsuario() {
+static void VisualizarUsuario() {
 
 	for (Usuario usuario1 : usuarios) {
 
@@ -226,7 +189,7 @@ private static void VisualizarUsuario() {
 	}
 }
 
-private static void cadastrarUsuario() {
+static void cadastrarUsuario() {
 
 	System.out.println("Nome do Cliente : ");
 	String nome = in.nextLine();
