@@ -11,14 +11,11 @@ public class CadastrarProd {
 
 	public static void baixaEstoque() {
 
-		for (Usuario usuario1 : usuarios) {
 			for (Games games1 : games) {
 				
 				System.out.println("\n nome do Jogo : " + games1.getNomeJogo()
 				+ " \n Valor pago : " + games1.getPreco()
 				+ " \n Estoque  Atualizado: " + games1.getEstoque());
-
-			}
 		}
 	}
 
@@ -28,8 +25,6 @@ public class CadastrarProd {
 
 		System.out.println("Jogo a adicionar");
 		String nomeJogo = in.nextLine();
-
-		
 
 		System.out.println("\n =============== \n Carrinho de Compras \n ================ \n");
 
@@ -128,11 +123,6 @@ public class CadastrarProd {
 		}
 	}
 }
-
-public static void calcularDesconto() {
-
-}
-
 public static void recaregarCarteira() {
 
 	System.out.print(" Valor a Depositar : ");

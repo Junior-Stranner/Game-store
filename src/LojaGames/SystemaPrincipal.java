@@ -31,7 +31,6 @@ public class SystemaPrincipal {
                 case 4:CadastrarProd.recaregarCarteira();break;
                 case 5:CadastrarProd.carrinhoCompraJogo();break;
                 case 6:CadastrarProd.baixaEstoque();break;
-                case 7:CadastrarProd.calcularDesconto();break;
                 case 9:System.out.println(" Finalizar Sistema !!");
                 default:System.out.println("Opção Inválida!!");
     
